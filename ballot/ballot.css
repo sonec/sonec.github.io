@@ -11,9 +11,9 @@
 }
 
 div.row {
-	padding-top: 20px;
+  padding-top: 20px;
   flex-wrap: inherit;
-  display: block ruby;
+  display: flex;
 }
 
 .row.align-items-start{
