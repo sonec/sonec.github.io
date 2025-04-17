@@ -1,0 +1,43 @@
+#candidates > .row{
+  display: flex;
+  padding: 10px;
+}
+.row .square {
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+div.row {
+	padding-top: 20px;
+  flex-wrap: inherit;
+  display: block ruby;
+}
+
+.row.align-items-start{
+  display: flex;
+}
+
+.number {
+	height:50px;
+	width:50px;
+  border-style:solid;
+  border-color: #000;
+  text-align: center;
+
+}
+
+.list-group-item .sen_can{
+  padding-left: 0px;
+  border-color: #fff;
+}
+
+.list-group-item.sen_group{
+  border-color: #fff;
+}
+
+.container.text-left {
+  margin-left: 10px;
+}

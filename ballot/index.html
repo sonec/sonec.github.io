@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="ballot.css">
+<script src="ballot.js"></script>
+<script src="populate.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.onload = populateMP();
+</script>
+<title>AUS Federal Election 2025 Ballot</title>
+</head>
+<body>
+<div class="container text-left">
+<h1>Generate sample ballot</h1>
+<div class="row align-items-start">
+<div class="col">
+<label for="state">Select state:</label>
+<select name="states" id="states" onchange="populateElectorates(this)"><option>Select</option></select>
+</div>
+<div class="col">
+<label for="state">Select electorate:</label>
+<select name="electorate" id="electorates" onchange="populateBallot(this)"><option>Select</option></select>
+</div>
+<div class="col">
+<a href="#" for="senate" onclick="populateSEN()">Senate ballot</a>
+</div>
+</div>
+<section id="candidates"></section>
+</div>
+</body>
+</html>
