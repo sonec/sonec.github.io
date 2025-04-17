@@ -145,14 +145,21 @@ function populateElectorates(object) {
 
 function populateBallot(object) {
   var electorate = object.value;
+  var counter = 0;
   const section = document.querySelector("#candidates");
   section.textContent = "";
+  if(electorate == "Select"){
+    section.innerHTML = "";
+    return;
+  }
   for (const candidate of candidatesMP) {
     if (candidate.division === electorate) {
       section.innerHTML = section.innerHTML + "<div class='row'>" + addBox() +
         `<div class='col'>${candidate.surname} ${candidate.ballotGivenName} <br/>${shooter(candidate.partyBallotName)} </div></div>`;
+      counter++;
     }
   }
+  section.innerHTML = `<div class='row'></div><div class='row'>There are ${counter} candidates:</div>` + section.innerHTML;
 }
 
 function addBox() {
