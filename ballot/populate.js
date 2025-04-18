@@ -78,7 +78,7 @@ async function populateSEN() {
         group = document.createElement("li");
         group.classList.add("list-group-item", "sen_group");
         columns.push(c.column);
-        group.innerHTML = "<div class='row'>" + addBox() + `<div class='col'>${c.column} <br /> ${shooter(c.groupName)}</div></div><hr>`;
+        group.innerHTML = "<div class='row'>" + `${addBox()}<div class='col'>${c.column}<br />${shooter(c.groupName)}</div></div><hr>`;
         list.appendChild(group);
         sen_group = document.createElement("ul");
         sen_group.classList.add("list-group");
@@ -86,11 +86,21 @@ async function populateSEN() {
       }
       sen_item = document.createElement("li");
       sen_item.classList.add("list-group-item", "sen_can");
-      sen_item.innerHTML = "<div class='row'>" + addBox() + `<div class='col'>${c.surname} ${c.ballotGivenName}</div></div>`;
+      sen_item.innerHTML = "<div class='row'>" + addBox() + `<div class='col'>${c.surname}<br />${c.ballotGivenName}</div></div>`;
       sen_group.appendChild(sen_item);
     }
   }
-
+  section.innerHTML = "<div class='row'></div>"
+    + "<div class='row'><p>"
+    + "<b>Above the line</b>: "
+    + "Number at least 6 boxes for parties or groups in the order of your choice (with number 1 as your first choice)."
+    + "<br />"
+    + "<b>Below the line</b>: "
+    + "Number at least 12 boxes for individual candidates in the order of your choice (with number 1 as your first choice)."
+    + "<br />"
+    + "You can number as many additional boxes as you choose when voting either above the line (i.e. more than six boxes) or below the line (i.e. more than twelve boxes)."
+    + "</p></div>"
+    + section.innerHTML;
 }
 
 async function populateMP() {
@@ -155,11 +165,11 @@ function populateBallot(object) {
   for (const candidate of candidatesMP) {
     if (candidate.division === electorate) {
       section.innerHTML = section.innerHTML + "<div class='row'>" + addBox() +
-        `<div class='col'>${candidate.surname} ${candidate.ballotGivenName} <br/>${shooter(candidate.partyBallotName)} </div></div>`;
+        `<div class='col'>${candidate.surname}, ${candidate.ballotGivenName}<br/>${shooter(candidate.partyBallotName)}</div></div>`;
       counter++;
     }
   }
-  section.innerHTML = `<div class='row'></div><div class='row'>There are ${counter} candidates:</div>` + section.innerHTML;
+  section.innerHTML = `<div class='row'></div><div class='row'>Number the boxes from 1 to ${counter} in the order of your choice:</div>` + section.innerHTML;
 }
 
 function addBox() {
