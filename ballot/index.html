@@ -21,11 +21,11 @@ window.onload = populateMP();
 <label for="state">Select state:</label>
 <select name="states" id="states" onchange="populateElectorates(this)"><option>Select</option></select>
 </div>
-<div class="col">
+<div class="col electorate">
 <label for="state">Select electorate (<a href="https://www.aec.gov.au/election/candidates.htm" target="_blank" title="Find electorate">Not sure?</a>):</label>
 <select name="electorate" id="electorates" onchange="populateBallot(this)"><option>Select</option></select>
 </div>
-<div class="col">
+<div class="col senate">
 <a href="#" for="senate" onclick="populateSEN()">Senate ballot</a>
 </div>
 </div>

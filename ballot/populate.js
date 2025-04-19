@@ -56,25 +56,12 @@ async function populateSEN() {
   }
   var selected_electorate = document.querySelector("#electorates");
   selected_electorate.value = "Select";
-  var hr;
-  var counter = 0;
+  list = document.createElement("ul");
+  list.classList.add("list-group", "list-group-horizontal", "position-relative");
+  section.appendChild(list);
   for (const c of candidatesSEN) {
     if (c.state === selected_state) {
       if (!columns.includes(c.column)) {
-        if (counter == 0) {
-          list = document.createElement("ul");
-          list.classList.add("list-group", "list-group-horizontal", "position-relative");
-          section.appendChild(list);
-        }
-        if (counter >= 3) {
-          counter = 0;
-          hr = document.createElement("hr");
-          hr.style = "height: 10px; background-color: #000;"
-          section.appendChild(hr);
-
-        } else {
-          counter = counter + 1;
-        }
         group = document.createElement("li");
         group.classList.add("list-group-item", "sen_group");
         columns.push(c.column);
@@ -137,6 +124,14 @@ function populateStates() {
 
 function populateElectorates(object) {
   var selected_state = object.value;
+  if(selected_state=="Select")
+  {
+    document.querySelector(".electorate").style.visibility = "hidden";
+    document.querySelector(".senate").style.visibility = "hidden";
+    const section = document.querySelector("#candidates");
+    section.innerHTML = "";
+    return;
+  }
   const section = document.querySelector("#candidates");
   section.textContent = "";
   const dropdown = document.querySelector("#electorates");
@@ -151,6 +146,8 @@ function populateElectorates(object) {
     option.value = e.division;
     dropdown.add(option);
   }
+  document.querySelector(".electorate").style.visibility = "visible";
+  document.querySelector(".senate").style.visibility = "visible";
 }
 
 function populateBallot(object) {

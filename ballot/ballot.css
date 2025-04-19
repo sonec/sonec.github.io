@@ -36,8 +36,22 @@ div.row {
 
 .list-group-item.sen_group{
   border-color: #fff;
+  border-bottom: solid;
+  border-radius: 0 !important;
 }
 
 .container.text-left {
   margin-left: 10px;
+}
+
+.senate{
+  visibility: hidden;
+}
+
+.electorate {
+  visibility: hidden;
+}
+
+.list-group-horizontal {
+  flex-wrap: wrap;
 }
