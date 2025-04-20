@@ -40,10 +40,6 @@ div.row {
   border-radius: 0 !important;
 }
 
-.container.text-left {
-  margin-left: 10px;
-}
-
 .senate{
   visibility: hidden;
 }
